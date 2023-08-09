@@ -271,7 +271,7 @@ def get_apod_info(image_id):
     # Query DB for image info
     db_cxn = sqlite3.connect(image_cache_db)
     db_cursor = db_cxn.cursor()
-    image_path_query = "SELECT title, explanation, file_path FROM image_data WHERE id=?;"
+    image_path_query = """SELECT title, explanation, file_path FROM image_data WHERE id=?;"""
     
     db_cursor.execute(image_path_query)
     query_result = db_cursor.fetchone()
@@ -296,7 +296,7 @@ def get_all_apod_titles():
     db_cxn = sqlite3.connect(image_cache_db)
     
     db_cursor = db_cxn.cursor()
-    image_titles_query = """SELECT title FROM image_data"""
+    image_titles_query = """SELECT title FROM image_data;"""
     db_cursor.execute(image_titles_query)
     image_titles = db_cursor.fetchall()
     db_cxn.close()
