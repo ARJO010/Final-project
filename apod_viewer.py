@@ -34,7 +34,7 @@ root.rowconfigure(0, weight=100)
 
 # Set the icon
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('COMP593.ApodViewer')
-root.withdraw()  # Not sure if this is necessary
+#root.withdraw()  # Not sure if this is necessary
 root.iconbitmap(os.path.join(apod_desktop.script_dir, 'NASA_logo.ico'))
 root.deiconify()  # Not sure if this is necessary
 

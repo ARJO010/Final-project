@@ -273,7 +273,7 @@ def get_apod_info(image_id):
     db_cursor = db_cxn.cursor()
     image_path_query = """SELECT title, explanation, file_path FROM image_data WHERE id=?;"""
     
-    db_cursor.execute(image_path_query)
+    db_cursor.execute(image_path_query,(image_id,))
     query_result = db_cursor.fetchone()
     db_cxn.close()
 
